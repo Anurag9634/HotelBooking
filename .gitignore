@@ -1,0 +1,79 @@
+# Maven Build Artifacts
+target/
+*.jar
+*.war
+*.ear
+*.class
+
+# Maven Wrapper
+.mvn/wrapper/maven-wrapper.jar
+!.mvn/wrapper/maven-wrapper.properties
+!.mvn/wrapper/MavenWrapperDownloader.java
+
+# IDE Files
+# IntelliJ IDEA
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# Eclipse/STS
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings/
+.springBeans
+.sts4-cache
+
+# NetBeans
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+
+# VS Code
+.vscode/
+
+# OS-Specific Files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+log/
+
+# Local Configuration Files
+application*.yml
+application*.properties
+!application.yml
+!application.properties
+.env
+*.local
+
+# Test and Coverage Reports
+/test-results/
+/coverage/
+jacoco.exec
+*.exec
+
+# Temporary Files
+*.tmp
+*.bak
+*.swp
+*~
+*.lock
+
+# Database Files
+*.db
+*.sql
+
+# Docker and CI/CD
+Dockerfile.local
+*.dockerignore
+/.github/
+/.circleci/
+/.gitlab-ci.yml
