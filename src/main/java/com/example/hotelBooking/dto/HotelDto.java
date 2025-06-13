@@ -2,7 +2,9 @@ package com.example.hotelBooking.dto;
 
 import com.example.hotelBooking.entities.HotelContactInfo;
 import lombok.Data;
+import lombok.ToString;
 
+@ToString
 @Data
 public class HotelDto {
     private Long id;

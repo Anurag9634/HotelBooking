@@ -9,6 +9,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Getter
@@ -43,6 +44,12 @@ public class Hotel {
 
     @Embedded
     private HotelContactInfo contactInfo;
+
+    @ManyToOne
+    private User owner;
+
+    @OneToMany(mappedBy = "hotel", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Room> rooms;
     // contact_info_address
 
 }

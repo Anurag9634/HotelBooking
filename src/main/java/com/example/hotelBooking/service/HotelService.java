@@ -17,4 +17,6 @@ public interface HotelService {
     void DeleteHotelById(Long id);
 
     HotelPaginatedResponseDto<HotelDto> GetAllHotels(HotelFilterRequest request);
+
+    void activateHotel(Long id);
 }

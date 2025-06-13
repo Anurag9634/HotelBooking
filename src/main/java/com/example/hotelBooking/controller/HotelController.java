@@ -21,7 +21,7 @@ public class HotelController {
     private final HotelService hotelService;
 
     @PostMapping("/create")
-    public ResponseEntity<HotelDto> CreateNewHotel(@RequestBody HotelDto hotelDto)
+    public ResponseEntity<HotelDto> createNewHotel(@RequestBody HotelDto hotelDto)
     {
         log.info("hii {}", hotelDto.getName());
         HotelDto hotel = hotelService.CreateNewHotel(hotelDto);
@@ -29,14 +29,14 @@ public class HotelController {
     }
 
     @GetMapping("/{hotelId}")
-    public ResponseEntity<HotelDto> GetHotelById(@PathVariable Long hotelId)
+    public ResponseEntity<HotelDto> getHotelById(@PathVariable Long hotelId)
     {
         HotelDto hotel = hotelService.GetHotelById(hotelId);
         return ResponseEntity.ok(hotel);
     }
 
     @PutMapping("/{hotelId}")
-    public ResponseEntity<HotelDto> UpdateHotelById(@PathVariable Long hotelId, @RequestBody HotelDto hotelDto)
+    public ResponseEntity<HotelDto> updateHotelById(@PathVariable Long hotelId, @RequestBody HotelDto hotelDto)
     {
 
         HotelDto hotel = hotelService.UpdateHotelById(hotelId, hotelDto);
@@ -44,7 +44,7 @@ public class HotelController {
     }
 
     @DeleteMapping("/{hotelId}")
-    public ResponseEntity<Void> DeleteHotelById(@PathVariable Long hotelId)
+    public ResponseEntity<Void> deleteHotelById(@PathVariable Long hotelId)
     {
         hotelService.DeleteHotelById(hotelId);
         return ResponseEntity.noContent().build();
@@ -55,5 +55,13 @@ public class HotelController {
         log.info("i am inside controller");
         HotelPaginatedResponseDto<HotelDto> hotels = hotelService.GetAllHotels(request);
         return ResponseEntity.ok(hotels);
+    }
+
+    @PatchMapping("/activateHotel/{hotelId}")
+    public ResponseEntity<Void> activateHotel(@PathVariable Long hotelId)
+    {
+        log.info("inside hotel Activate api : {}", hotelId);
+        hotelService.activateHotel(hotelId);
+        return ResponseEntity.noContent().build();
     }
 }
